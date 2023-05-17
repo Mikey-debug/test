@@ -20,4 +20,4 @@ async def echo(client, message):
     await message.reply(message.text)
 
 
-app.run()  # Automatically start() and idle()
+bot.run()  # Automatically start() and idle()
