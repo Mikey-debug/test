@@ -17,7 +17,18 @@ bot = Client(
 
 @bot.on_message(filters.text & filters.private)
 async def echo(client, message):
-    await message.reply(message.text)
-
+    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("Click me!", callback_game="ff")]])
+    post = await bot.send_message(
+        chat_id=channel,
+        text="Hello! Please click the button below:",
+        reply_markup=keyboard
+    )
+@bot.on_callback_query()
+async def handle_button_click(client, callback_query): 
+    # await bot.answer_callback_query(callback_query.id, url="https://t.me/Mizuu_testBot")
+    post = await bot.send_message(
+        chat_id=channel,
+        text="Hello!"
+    )
 
 bot.run()  # Automatically start() and idle()
