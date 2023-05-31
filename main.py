@@ -1,34 +1,5 @@
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-import asyncio 
+import requests
 
-API_ID = 6133145
-API_HASH = "30d4307da4885a00c58089d5f5503b5b"
-BOT_TOKEN = "5619875667:AAGCK37OkBEvXVXnGf696ddufCycWOvP6AE"
-group = -1001728546352
-channel = -1001962326301
-
-bot = Client(
-    "aa",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN,
-)
-
-@bot.on_message(filters.text & filters.private)
-async def echo(client, message):
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("Click me!", callback_game="ff")]])
-    post = await bot.send_message(
-        chat_id=channel,
-        text="Hello! Please click the button below:",
-        reply_markup=keyboard
-    )
-@bot.on_callback_query()
-async def handle_button_click(client, callback_query): 
-    # await bot.answer_callback_query(callback_query.id, url="https://t.me/Mizuu_testBot")
-    post = await bot.send_message(
-        chat_id=channel,
-        text="Hello!"
-    )
-
-bot.run()  # Automatically start() and idle()
+r = requests.get("http://127.0.0.1:5000/pahe/")
+print(r.json())
+                
