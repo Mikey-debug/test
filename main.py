@@ -33,7 +33,7 @@ class DNSResolverHTTPSAdapter(HTTPAdapter):
             connections, maxsize, block=block, **pool_kwargs)
 
 
-common_name = 'animepahe.ru'
+common_name = 'google.com'
 google_dns_host = "8.8.8.8"
 url = 'https://animepahe.ru/api?m=search&q=Oshi%20No%20Ko'
 my_session = Session()
