@@ -34,7 +34,7 @@ class DNSResolverHTTPSAdapter(HTTPAdapter):
 
 
 common_name = 'animepahe.ru'
-google_dns_host = "104.21.10.163"
+google_dns_host = "8.8.8.8"
 url = 'https://animepahe.ru/api?m=search&q=Oshi%20No%20Ko'
 my_session = Session()
 my_session.mount(url.lower(),
