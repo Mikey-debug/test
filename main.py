@@ -41,5 +41,5 @@ my_session.mount(url.lower(),
                  DNSResolverHTTPSAdapter(common_name, google_dns_host))
 headers = {'Content-Type': 'application/json'}
 resp = my_session.get(url, headers=headers)
-print resp.code
-print resp.text
+print (resp.code)
+print (resp.text)
